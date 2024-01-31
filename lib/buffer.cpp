@@ -1,5 +1,5 @@
-#include "buffer.hpp"
-#include "fonts.hpp"
+#include "monofont/buffer.hpp"
+#include "monofont/fonts.hpp"
 
 monofont::buffer::buffer(const size_t &width, const size_t &height)
     : width{width}, height{height}, data{std::vector(width * height, false)} {}

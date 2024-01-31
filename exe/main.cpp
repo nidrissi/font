@@ -1,5 +1,5 @@
-#include <buffer.hpp>
-#include <fonts.hpp>
+#include <monofont/buffer.hpp>
+#include <monofont/fonts.hpp>
 
 int main(int argc, char *argv[]) {
   monofont::buffer buffer(15, 12);

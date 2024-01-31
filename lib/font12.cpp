@@ -1,4 +1,4 @@
-#include "fonts.hpp"
+#include "monofont/fonts.hpp"
 
 static const std::vector<uint8_t> Font12_Table = {
     // @0 ' ' (7 pixels wide)
