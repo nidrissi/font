@@ -10,7 +10,7 @@ class Font {
 public:
   const uint8_t width;
   const uint8_t height;
-  std::span<const uint8_t> operator[](const char &c) const;
+  std::span<const uint8_t> operator()(const char &c) const;
 
   static const Font Font24;
   static const Font Font20;

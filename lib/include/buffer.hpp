@@ -11,13 +11,15 @@ public:
 
   buffer(const size_t &width, const size_t &height);
 
-  bool &operator()(const size_t &x, const size_t &y);
-  const bool &operator()(const size_t &x, const size_t &y) const;
+  bool operator()(const size_t &x, const size_t &y) const;
 
   void draw_char(const size_t &x, const size_t &y, const Font &font,
                  const char &c);
 
+  void print(std::ostream &stream);
+
 private:
-  std::unique_ptr<bool[]> data;
+  std::vector<bool> data;
+  size_t pos(const size_t &x, const size_t &y) const;
 };
 }; // namespace monofont
