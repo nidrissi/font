@@ -1,4 +1,4 @@
-add_library(monofont SHARED)
+add_library(monofont STATIC)
 target_sources(monofont PRIVATE
     fonts.cpp
     font8.cpp font12.cpp font16.cpp font20.cpp font24.cpp

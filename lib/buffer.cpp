@@ -18,13 +18,11 @@ void monofont::buffer::draw_char(const size_t &x, const size_t &y,
     throw std::out_of_range("buffer::draw_char(): out of range");
   }
 
-  auto span = font(c);
-
   for (size_t i = 0; i < font.width; i++) {
     for (size_t j = 0; j < font.height; j++) {
       // std::vector<bool> is not a container!
       // data[...] is not a normal reference
-      data[pos(x + i, y + j)] = span[j] & (1 << (7 - i));
+      data[pos(x + i, y + j)] = font(c, i, j);
     }
   }
 }
