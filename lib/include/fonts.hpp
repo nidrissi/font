@@ -2,19 +2,29 @@
 #include <cinttypes>
 #include <iostream>
 #include <map>
+#include <span>
 #include <vector>
 
 namespace monofont {
-struct Font {
-  const std::vector<uint8_t> table;
+class Font {
+public:
   const uint8_t width;
   const uint8_t height;
+  std::span<const uint8_t> operator[](const char &c) const;
+
+  static const Font Font24;
+  static const Font Font20;
+  static const Font Font16;
+  static const Font Font12;
+  static const Font Font8;
+
+private:
+  const std::vector<uint8_t> table;
   const std::map<char, size_t> positions;
+
+  Font(const std::vector<uint8_t> &table, uint8_t width, uint8_t height,
+       const std::map<char, size_t> &positions)
+      : width{width}, height{height}, table{table}, positions{positions} {}
 };
 
-extern Font Font24;
-extern Font Font20;
-extern Font Font16;
-extern Font Font12;
-extern Font Font8;
 }; // namespace monofont

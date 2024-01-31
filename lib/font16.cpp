@@ -1734,9 +1734,5 @@ static const std::map<char, size_t> Font16_Positions = {
     {'z', 2880},  {'{', 2912}, {'|', 2944}, {'}', 2976}, {'~', 3008},
 };
 
-monofont::Font monofont::Font16 = {
-    .table = Font16_Table,
-    .width = 11,
-    .height = 16,
-    .positions = Font16_Positions,
-};
+const monofont::Font monofont::Font::Font16 = {Font16_Table, 11, 16,
+                                               Font16_Positions};

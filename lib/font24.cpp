@@ -2494,9 +2494,9 @@ static const std::map<char, size_t> Font24_Positions = {
     {'z', 6480},  {'{', 6552}, {'|', 6624}, {'}', 6696}, {'~', 6768},
 };
 
-monofont::Font monofont::Font24 = {
-    .table = Font24_Table,
-    .width = 17,
-    .height = 24,
-    .positions = Font24_Positions,
+const monofont::Font monofont::Font::Font24 {
+   Font24_Table,
+   17,
+   24,
+   Font24_Positions
 };

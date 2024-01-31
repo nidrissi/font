@@ -1,5 +1,6 @@
 add_library(monofont SHARED)
 target_sources(monofont PRIVATE
+    fonts.cpp
     font8.cpp font12.cpp font16.cpp font20.cpp font24.cpp
     buffer.cpp
 )

@@ -971,9 +971,4 @@ static const std::map<char, size_t> Font8_Positions = {
     {'z', 720},  {'{', 728}, {'|', 736}, {'}', 744}, {'~', 752},
 };
 
-monofont::Font monofont::Font8 = {
-    .table = Font8_Table,
-    .width = 5,
-    .height = 8,
-    .positions = Font8_Positions,
-};
+const monofont::Font monofont::Font::Font8{Font8_Table, 5, 8, Font8_Positions};
