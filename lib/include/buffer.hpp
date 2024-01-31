@@ -1,4 +1,5 @@
 #pragma once
+#include "fonts.hpp"
 #include <cstddef>
 #include <memory>
 
@@ -12,6 +13,9 @@ public:
 
   bool &operator()(const size_t &x, const size_t &y);
   const bool &operator()(const size_t &x, const size_t &y) const;
+
+  void draw_char(const size_t &x, const size_t &y, const Font &font,
+                 const char &c);
 
 private:
   std::unique_ptr<bool[]> data;

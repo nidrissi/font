@@ -19,3 +19,12 @@ const bool &monofont::buffer::operator()(const size_t &x,
   }
   return data[y * width + x];
 }
+
+void monofont::buffer::draw_char(const size_t &x, const size_t &y,
+                                 const Font &font, const char &c) {
+  if (x + font.width >= width || y + font.height >= height) {
+    throw std::out_of_range("buffer::draw_char(): out of range");
+  }
+
+  throw std::runtime_error("buffer::draw_char(): not implemented");
+}
